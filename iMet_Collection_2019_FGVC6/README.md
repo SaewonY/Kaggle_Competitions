@@ -14,58 +14,47 @@
 * 4th place solution [here](https://www.kaggle.com/c/imet-2019-fgvc6/discussion/94817#latest-550074)
 * 6th place solution [here](https://www.kaggle.com/c/imet-2019-fgvc6/discussion/95282#latest-550969) with code [here](https://github.com/YU1ut/imet-6th-soltuion)
 * 10th place solution [here](https://www.kaggle.com/c/imet-2019-fgvc6/discussion/95311#latest-568748)
+  
 <br>
 
 ## References
 
 - build script(https://github.com/lopuhin/kaggle-script-template)
-- pytorch template(https://github.com/victoresque/pytorch-template)
 
 <br>
 
-## Added datasets
+## Added datasets in kaggle (pretrained weights)
 
 - resnet50(https://www.kaggle.com/pytorch/resnet50)
 - se-resnext(https://www.kaggle.com/seefun/se-resnext-pytorch-pretrained)
 
 <br>
 
-## Arguments
+## Usage
 
-- model(default: resnet50): 아래의 모델의 종류 중에서 선택합니다.
-    - resnet18
-    - resnet34
-    - resnet50
-    - resnet101
-    - resnet152
-    - densenet121
-    - densenet169
-    - densenet201
-    - densenet161
-    - seresnext50
-    - seresnext101
+* Encode and Decode to upload on kaggle script
+* argument example is on **script_template.py**
+```
+1. python build.py => build/script.py produced
+2. copy and paste on kaggle script kernel and commit
+```
 
+- choose one of the loss functions as follows
+  - "BCE": binary cross entropy
+  - "FOCAL": focal loss
+  - "FBET": Fbet loss
+  - "COMBINE": focal combined with fbet
+  - ex: --loss COMBINE 
 
-- train_augments(default: "random_crop, horizontal_flip): 아래에서 원하는 것을 넣거나 빼고 string으로 값을 줍니다.
-- test_augments(default: "random_crop, horizontal_flip): 아래에서 원하는 것을 넣거나 빼고 string으로 값을 줍니다.
-    - "random_crop, keep_aspect, horizontal_flip, vertical_flip, random_rotate, color_jitter"
-    - ex: trainig 시 random crop과 horizontal flip만 원할 시 --train_augments "random_crop, horizontal_flip"
-    - ex: test 시 random crop과 horizontal flip만 원할 시 --test_augments "random_crop, horizontal_flip"
-
-
-- size(default: 288): 입력 영상의 크기를 설정합니다.
-- augment_ratio(default: 0.5): augmentation이 적용되는 확률입니다.
-
-- loss(default: "BCE"): loss를 선택합니다.
-    - "BCE": binary cross entropy를 사용합니다.
-    - "FOCAL": focal loss를 사용합니다.
-    - "FBET": Fbet loss를 사용합니다.
-    - "COMBINE": focal과 fbet을 함께 사용합니다.
-    - ex: --loss COMBINE
- - label_smoothing : eps [0, 1]
-    - 참고 논문 : Bag of Tricks for Image Classification with Convolutional Neural Networks
-    - 설명 문단 : 5.2
-    - https://arxiv.org/pdf/1812.01187.pdf
- - mixup data & mixup loss : [True, False] (alpha 0.4)
-    - 참고 논문 : mixup: Beyond Empirical Risk Minimization
-    - https://arxiv.org/abs/1710.09412
+- availabel augmentations
+  - random_crop
+  - keep_aspect
+  - horizontal_flip
+  - vertical_flip
+  - random_rotate
+  - color_jitter
+  - ex: --train_augments "random_crop, horizontal_flip, random_rotate", --test_augments "random_crop"
+  
+- etc..
+  - label_smoothing: eps [0, 1], reference: https://arxiv.org/pdf/1812.01187.pdf
+  - mixup data & mixup loss : [True, False] (alpha 0.4), reference: https://arxiv.org/abs/1710.09412
