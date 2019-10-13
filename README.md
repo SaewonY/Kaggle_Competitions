@@ -1,1 +1,1 @@
-- code used for kaggle competition
+## Kaggle Competition Solutions
