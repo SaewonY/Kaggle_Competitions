@@ -10,7 +10,7 @@
 
 ## Competition Solution
 
-- Ensembled Total 20 models (5fold, tta 2)
+- Ensembled Total 10 models (5fold, tta 2)
   - resnet50 - Image size 296
   - se_resnext101_32x4d - Image size 380
 - Stratified 5 KFold
