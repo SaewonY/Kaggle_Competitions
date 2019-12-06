@@ -4,6 +4,19 @@
 
 <br>
 
+## Objective
+
+- Develop model to better predict what contributes to a succesful run play. 
+- How many yards can the runner earn for each play?
+
+<br>
+
+## Evaluation Metric
+**Continuous Ranked Probability Score (CRPS)** - [explained here](https://stats.stackexchange.com/questions/246649/how-to-discretize-continuous-rank-probability-score)
+
+
+<br>
+
 ## Winning Solutions
 
 - 1st place solution [here](https://www.kaggle.com/c/nfl-big-data-bowl-2020/discussion/119400#latest-688670)
