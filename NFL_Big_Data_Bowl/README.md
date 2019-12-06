@@ -2,11 +2,7 @@
 
 ![image](https://user-images.githubusercontent.com/40786348/70203528-87bf9380-1760-11ea-8f0d-224044c271bd.png)
 
-## Must Look Guideline
-
-## EDA Kernels
-
-## Must look kernels, discussions
+<br>
 
 ## Winning Solutions
 
@@ -23,3 +19,10 @@
 <br>
 
 ## some review about the competition 
+
+- replace S feature with 10*Dis both for 2017 and 2018 (Data cleansing)
+- using CNN architecture / x-axis 10 offensive players, y-axis defensive players, features on channels (1st place solution)
+- can augment the data by flipping the coordinates of the players (when using CNN)
+- stable CV strategy (seed averaging is necessary for neural network)
+  - 5-fold GroupKFold on GameId, but in validation folds only consider data from 2018 (2018 dataset is more similar to 2019)
+- going deeper, SE-module, residual networks didn't work (simple works best sometimes)
