@@ -18,6 +18,8 @@
 
 - 4th place solution [here](https://www.kaggle.com/c/nfl-big-data-bowl-2020/discussion/119885#latest-686046)
 
+- 5th place solution [here](https://www.kaggle.com/c/nfl-big-data-bowl-2020/discussion/119357#latest-684386)
+
 <br>
 
 ## some review about the competition 
